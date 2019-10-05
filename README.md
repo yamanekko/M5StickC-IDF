@@ -4,16 +4,15 @@ This is a M5StickC version of [M5Stack-IDF](https://github.com/m5stack/M5Stack-I
 
 ## Install
 
-* Download and install [esp-idf](https://github.com/espressif/esp-idf) of stable version.
-    * for CMake: https://docs.espressif.com/projects/esp-idf/en/stable/get-started-cmake/index.html
-    * for make: https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html
+* Download and install [esp-idf](https://github.com/espressif/esp-idf) of stable version and `idf.py`.
+    * see [Get Started (CMake)](https://docs.espressif.com/projects/esp-idf/en/stable/get-started-cmake/index.html)
 * Create template idf project
 
 ```
 $ git clone --recursive https://github.com/yamanekko/M5StickC-IDF.git
 ```
 
-## build with CMake
+## Build and Execution
 
 ```
 ## update config
@@ -32,26 +31,7 @@ $ idf.py -p /dev/tty.usbserial-9D527BF645A -b 115200 flash
 $ idf.py -p /dev/tty.usbserial-9D527BF645A -b 115200 monitor
 ```
 
-## build with make
-
-```
-## update config
-$ make menuconfig
-
-## build
-$ make
-
-## transfer to flash
-$ make flash
-
-## when you need to change port:
-$ ESPPORT=/dev/tty.usbserial-9D527BF645A make flash
-
-## monitor
-$ make monitor
-```
-
-## Note
+## NOTE
 
 * If you use macOS, you may need to fix `ulimit` value:
 
