@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "esp_system.h"
 #include "esp_spi_flash.h"
+#include <M5StickC.h>
 
 void setup() {
     Serial.begin(115200);
@@ -21,8 +22,14 @@ void setup() {
 
     printf("%dMB %s flash\n", spi_flash_get_chip_size() / (1024 * 1024),
             (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+
+    // Initialize the M5StickC object
+    M5.begin();
+
+    // LCD display
+    M5.Lcd.print("Hello World");
 }
- 
+
 void loop() {
     Serial.println("loop");
     delay(1000);
